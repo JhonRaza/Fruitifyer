@@ -1,0 +1,11 @@
+rootProject.name = 'Fruitifyer'
+include ':react-native-drop-shadow'
+project(':react-native-drop-shadow').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-drop-shadow/android')
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':app'
+includeBuild('../node_modules/react-native-gradle-plugin')
+
+if (settings.hasProperty("newArchEnabled") && settings.newArchEnabled == "true") {
+    include(":ReactAndroid")
+    project(":ReactAndroid").projectDir = file('../node_modules/react-native/ReactAndroid')
+}

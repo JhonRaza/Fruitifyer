@@ -1,0 +1,377 @@
+[{
+  "_id":  "1",
+  "FName": "Apple",
+  "Nutrition" :[
+      ["Calories", "104k"],
+      ["Carbohydrate", "27.6 g"],
+      ["Fiber", "2.8 g"], 
+      ["Sugar", "21.8 g"],
+      ["Fat", "0.3 g"],
+      ["Protein", "0.6  g"],
+      ["Vitamin C", "14% RDA"],
+      ["Potassium", "6% RDA"],
+      ["Manganese", "4% RDA"], 
+      ["Vitamin B6", " 4% RDA"],
+      ["Vitamin B2", "4% RDA"]
+           
+]},
+{
+    "_id": "2",
+    "FName": "Banana",
+    "Nutrition" :[
+        ["Calories", "105 k"],
+        ["Carbohydrate", "27.0 g"],
+        ["Fiber", "3.1 g"], 
+        ["Sugar", "14.4 g"],
+        ["Fat", "0.4 g"],
+        ["Protein", "1.3  g"],
+        ["Vitamin C", "22% RDA"],
+        ["Potassium", "17% RDA"],
+        ["Manganese", "16% RDA"], 
+        ["Vitamin B6", " 12% RDA"],
+        ["Vitamin B2", "8% RDA"]        
+  ]},
+  {
+    "_id":"3",
+    "FName": "Apricot",
+    "Nutrition" :[
+        ["Calories", "16.8 k"],
+        ["Carbohydrate", "3.9 g"],
+        ["Fiber", "0.7 g"], 
+        ["Sugar", "3.2 g"],
+        ["Fat", "0.1 g"],
+        ["Protein", "0.5  g"],
+        ["Vitamin C", "6% RDA"],
+        ["Potassium", "3% RDA"],
+        ["Vitamin A", "13% RDA"], 
+        ["Vitamin E", " 2% RDA"],
+        ["Phosphorus", "1% RDA"]        
+  ]},
+  {
+    "_id": "4",
+    "FName": "Date Palm",
+    "Nutrition" :[
+        ["Calories", "66.5 k"],
+        ["Carbohydrate", "72 g"],
+        ["Fiber", "6.4 g"], 
+        ["Sugar", "64 g"],
+        ["Fat", "0 g"],
+        ["Protein", "0.4  g"],
+        ["Vitamin C", "22% RDA"],
+        ["Potassium", "5% RDA"],
+        ["Copper", "4% RDA"], 
+        ["Vitamin B6", " 3% RDA"],
+        ["Magnesium", "3% RDA"]        
+  ]},
+  {
+    "_id": "5",
+    "FName": "Cherry",
+    "Nutrition" :[
+        ["Calories", "50 k"],
+        ["Carbohydrate", "12.2 g"],
+        ["Fiber", "1.6 g"], 
+        ["Sugar", "8.5 g"],
+        ["Fat", "0.3 g"],
+        ["Protein", "1.0  g"],
+        ["Vitamin C", "17% RDA"],
+        ["Potassium", "5% RDA"],
+        ["Copper", "5% RDA"],
+        ["Vitamin A", " 26% RDA"]
+  ]},
+  {
+    "_id":"6",
+    "FName": "Grape",
+    "Nutrition" :[
+        ["Calories", "69 k"],
+        ["Carbohydrate", "18.1 g"],
+        ["Fiber", "0.9 g"], 
+        ["Sugar", "15.5 g"],
+        ["Fat", "0.2 g"],
+        ["Protein", "0.7  g"],
+        ["Vitamin C", "18% RDA"],
+        ["Potassium", "5% RDA"],
+        ["Manganese", "4% RDA"], 
+        ["Vitamin K", " 18% RDA"],
+        ["Vitamin B1", "5% RDA"]        
+  ]},
+  {
+    "_id": "7",
+    "FName": "Grape Fruit",
+    "Nutrition" :[
+        ["Calories", "96 k"],
+        ["Carbohydrate", "24.5 g"],
+        ["Fiber", "3.7 g"], 
+        ["Sugar", "15.8 g"],
+        ["Fat", "0.3 g"],
+        ["Protein", "1.8  g"],
+        ["Vitamin C", "120% RDA"],
+        ["Potassium", "9% RDA"],
+        ["Vitamin A", "53% RDA"], 
+        ["Vitamin B1", " 7% RDA"],
+        ["Folate", "7% RDA"]        
+  ]},
+  {
+    "_id": "8",
+    "FName": "Guava",
+    "Nutrition" :[
+        ["Calories", "37.4 k"],
+        ["Carbohydrate", "7.9 g"],
+        ["Fiber", "3.0 g"], 
+        ["Sugar", "4.9 g"],
+        ["Fat", "0.5 g"],
+        ["Protein", "1.4  g"],
+        ["Vitamin C", "209% RDA"],
+        ["Potassium", "7% RDA"],
+        ["Vitamin A", "7% RDA"], 
+        ["Copper", "6% RDA"],
+        ["Folate", "7% RDA"]        
+  ]},
+  {
+    "_id":"9",
+    "FName": "Kiwi",
+    "Nutrition" :[
+        ["Calories", "46.4 k"],
+        ["Carbohydrate", "11.1 g"],
+        ["Fiber", "2.3 g"], 
+        ["Sugar", "6.8 g"],
+        ["Fat", "0.4 g"],
+        ["Protein", "0.9  g"],
+        ["Vitamin C", "117% RDA"],
+        ["Potassium", "7% RDA"],
+        ["Vitamin E", "6% RDA"], 
+        ["Copper", "4% RDA"],
+        ["Vitamin K", "38% RDA"]        
+  ]},
+  {
+    "_id": "10",
+    "FName": "Lemon",
+    "Nutrition" :[
+        ["Calories", "25.8 k"],
+        ["Carbohydrate", "25.4 g"],
+        ["Fiber", "1.6 g"], 
+        ["Sugar", "1.5 g"],
+        ["Fat", "0.2 g"],
+        ["Protein", "0.6  g"],
+        ["Vitamin C", "51% RDA"],
+        ["Potassium", "2% RDA"],
+        ["Calcium", "2% RDA"], 
+        ["Vitamin B6", " 2% RDA"],
+        ["Vitamin B1", "2% RDA"]        
+  ]},
+  {
+    "_id":"11",
+    "FName": "Lychee",
+    "Nutrition" :[
+        ["Calories", "66 k"],
+        ["Carbohydrate", "16.5 g"],
+        ["Fiber", "1.3 g"], 
+        ["Sugar", "15.2 g"],
+        ["Fat", "0.4 g"],
+        ["Protein", "0.8  g"],
+        ["Vitamin C", "119% RDA"],
+        ["Potassium", "5% RDA"],
+        ["Copper", "7% RDA"], 
+        ["Vitamin B6", "5% RDA"],
+        ["Vitamin B2", "4% RDA"]        
+  ]},
+  {
+    "_id":"12",
+    "FName": "Mango",
+    "Nutrition" :[
+        ["Calories", "107 k"],
+        ["Carbohydrate", "28.1 g"],
+        ["Fiber", "3.0 g"], 
+        ["Sugar", "24.4 g"],
+        ["Fat", "0.4 g"],
+        ["Protein", "0.8  g"],
+        ["Vitamin C", "76% RDA"],
+        ["Vitamin A", "25% RDA"],
+        ["Vitamin E", "9% RDA"], 
+        ["Vitamin B6", " 11% RDA"],
+        ["Copper", "9% RDA"]        
+  ]},
+  {
+    "_id": "13",
+    "FName": "Melon",
+    "Nutrition" :[
+        ["Calories", "61.2 k"],
+        ["Carbohydrate", "15.5 g"],
+        ["Fiber", "1.4 g"], 
+        ["Sugar", "13.8 g"],
+        ["Fat", "0.2 g"],
+        ["Protein", "0.9  g"],
+        ["Vitamin C", "51% RDA"],
+        ["Potassium", "11% RDA"],
+        ["Vitamin K", "6% RDA"], 
+        ["Vitamin B6", " 7% RDA"],
+        ["Folate", "8% RDA"]        
+  ]},
+  {
+    "_id": "14",
+    "FName": "Olive",
+    "Nutrition" :[
+        ["Calories", "81 k"],
+        ["Carbohydrate", "5.6 g"],
+        ["Fiber", "2.5 g"], 
+        ["Sugar", "0 g"],
+        ["Fat", "6.9 g"],
+        ["Protein", "1.0  g"],
+        ["Vitamin A", "7% RDA"],
+        ["Vitamin E", "8% RDA"],
+        ["Copper", "11% RDA"], 
+        ["Sodium", " 37% RDA"],
+        ["Iron", "18% RDA"]        
+  ]},
+  {
+    "_id":"15",
+    "FName": "Orange",
+    "Nutrition" :[
+        ["Calories", "86.5 k"],
+        ["Carbohydrate", "78.8 g"],
+        ["Fiber", "4.4 g"], 
+        ["Sugar", "17.2 g"],
+        ["Fat", "0.2 g"],
+        ["Protein", "1.7  g"],
+        ["Vitamin C", "163% RDA"],
+        ["Potassium", "10% RDA"],
+        ["Vitamin A", "8% RDA"], 
+        ["Vitamin B1", " 11% RDA"],
+        ["Folate", "14% RDA"]        
+  ]},
+  {
+    "_id": "16",
+    "FName": "Papaya",
+    "Nutrition" :[
+        ["Calories", "54.6 k"],
+        ["Carbohydrate", "13.7 g"],
+        ["Fiber", "2.5 g"], 
+        ["Sugar", "8.3 g"],
+        ["Fat", "0.2 g"],
+        ["Protein", "0.9  g"],
+        ["Vitamin C", "144% RDA"],
+        ["Potassium", "10% RDA"],
+        ["Vitamin A", "31% RDA"], 
+        ["Vitamin E", "5% RDA"],
+        ["Vitamin B2", "8% RDA"]        
+  ]},
+
+  {
+    "_id":"17",
+    "FName": "Pear",
+    "Nutrition" :[
+        ["Calories", "103 k"],
+        ["Carbohydrate", "27.5 g"],
+        ["Fiber", "5.5 g"], 
+        ["Sugar", "17.4 g"],
+        ["Fat", "0.2 g"],
+        ["Protein", "0.7  g"],
+        ["Vitamin C", "14% RDA"],
+        ["Potassium", "6% RDA"],
+        ["Manganese", "4% RDA"], 
+        ["Copper", "7% RDA"],
+        ["Vitamin K", "10% RDA"]        
+  ]},
+
+  {
+    "_id": "18",
+    "FName": "Persimmon",
+    "Nutrition" :[
+        ["Calories", "118 k"],
+        ["Carbohydrate", "31.2 g"],
+        ["Fiber", "6 g"], 
+        ["Sugar", "21 g"],
+        ["Fat", "0.3 g"],
+        ["Protein", "1.0  g"],
+        ["Vitamin C", "21% RDA"],
+        ["Vitamin B6", "8% RDA"],
+        ["Manganese", "30% RDA"], 
+        ["Vitamin A", "55% RDA"],
+        ["Copper", "9% RDA"]        
+  ]},
+
+  {
+    "_id": "19",
+    "FName": "Pineapple",
+    "Nutrition" :[
+        ["Calories", "82.5 k"],
+        ["Carbohydrate", "21.6 g"],
+        ["Fiber", "2.3 g"], 
+        ["Sugar", "16.3 g"],
+        ["Fat", "0.2 g"],
+        ["Protein", "0.9  g"],
+        ["Vitamin C", "131% RDA"],
+        ["Vitamin B6", "9% RDA"],
+        ["Manganese", "76% RDA"], 
+        ["Vitamin B1", "9% RDA"],
+        ["Copper", "9% RDA"]        
+  ]},
+
+  {
+    "_id": "20",
+    "FName": "Plum",
+    "Nutrition" :[
+        ["Calories", "30.4 k"],
+        ["Carbohydrate", "7.5 g"],
+        ["Fiber", "0.9 g"], 
+        ["Sugar", "6.5 g"],
+        ["Fat", "0.2 g"],
+        ["Protein", "0.5  g"],
+        ["Vitamin C", "10% RDA"],
+        ["Potassium", "3% RDA"],
+        ["Vitamin A", "5% RDA"], 
+        ["Vitamin K", "5% RDA"],
+        ["Copper", "2% RDA"]        
+  ]},
+
+  {
+    "_id": "21",
+    "FName": "Pomegranate",
+    "Nutrition" :[
+        ["Calories", "234 k"],
+        ["Carbohydrate", "52.7 g"],
+        ["Fiber", "11.3 g"], 
+        ["Sugar", "38.5 g"],
+        ["Fat", "3.3 g"],
+        ["Protein", "4.7  g"],
+        ["Vitamin C", "58% RDA"],
+        ["Potassium", "48% RDA"],
+        ["Manganese", "27% RDA"], 
+        ["Vitamin B6", "22% RDA"],
+        ["Vitamin B2", "19% RDA"]        
+  ]},
+
+  {
+    "_id": "22",
+    "FName": "Strawberry",
+    "Nutrition" :[
+        ["Calories", "48.6 k"],
+        ["Carbohydrate", "11.7 g"],
+        ["Fiber", "3 g"], 
+        ["Sugar", "7.4 g"],
+        ["Fat", "0.5 g"],
+        ["Protein", "0.1  g"],
+        ["Vitamin C", "149% RDA"],
+        ["Potassium", "7% RDA"],
+        ["Manganese", "29% RDA"], 
+        ["Magnesium", "5% RDA"],
+        ["Folate", "9% RDA"]        
+  ]},
+
+  {
+    "_id":"23",
+    "FName": "Watermelon",
+    "Nutrition" :[
+        ["Calories", "46.2 k"],
+        ["Carbohydrate", "11.6 g"],
+        ["Fiber", "0.6 g"], 
+        ["Sugar", "9.5 g"],
+        ["Fat", "0.2 g"],
+        ["Protein", "0.9  g"],
+        ["Vitamin C", "21% RDA"],
+        ["Potassium", "5% RDA"],
+        ["Vitamin A", "18% RDA"], 
+        ["Magnesium", "4% RDA"],
+        ["Vitamin B5", "3% RDA"]        
+  ]}
+
+ ]
