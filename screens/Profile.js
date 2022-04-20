@@ -11,10 +11,12 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import FruitDetails from '../assets/FruitDetails.json';
 import DropShadow from "react-native-drop-shadow";
 
-const Item = ({ title }) => (
+const Item = ({ title }) =>
+(
     <View style={styles.item}>
         {/* <Image source={require('../assets/fruitsandvegetables_Apple.png')} style={{ height: 70, width: 70, flex: 1 }} /> */}
         <View style={styles.itemContainer}>
+            {/* <Image source={require(im)}/> */}
             <Text style={{ fontFamily: 'Poppins-Regular', fontSize: 17 }}>{title}</Text></View>
         {/* <View style={{
                     flex: 0.5, top: 10, right: 8, borderBottomWidth: 0.5,

@@ -10,7 +10,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 // import { shadow } from 'react-native-paper';
 import DropShadow from "react-native-drop-shadow";
 import Animated from 'react-native-reanimated';
-import BottomSheet from 'reanimated-bottom-sheet';
 // import Modal from "react-native-modal";
 
 // import { Icon, Slider } from 'react-native-elements'

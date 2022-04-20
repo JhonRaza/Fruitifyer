@@ -18,6 +18,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 // import 
 const Stack = createStackNavigator();
 export default function Main() {
+  const forFade = ({ current }) => ({
+    cardStyle: {
+      opacity: current.progress,
+    },
+  });
     const {Name,Email,Password,DOB, Mass, Logged} = useContext(UserContext);
     const [logged, setLogged] = Logged
     // console.log(logged)
@@ -25,10 +30,10 @@ export default function Main() {
     <NavigationContainer>
     <Stack.Navigator>
     {!logged? (<Stack.Screen name="Landing" component={Landing} options={{headerShown: false}}/>): null}
-  {logged? (<Stack.Screen name="Base" component={Base} options={{headerShown: false}}/>): null}
+  {logged? (<Stack.Screen name="Base" component={Base} options={{headerShown: false, cardStyleInterpolator: forFade}}/>): null}
   {logged? (<Stack.Screen name="Camera" component={Camera} />): null}
   {logged? (<Stack.Screen name="Details" component={Details} />): null}
-  {logged? (<Stack.Screen name="Fruit Details" component={FruitDetails} options={({ route }) => ({ title: route.params.name })} />): null}
+  {logged? (<Stack.Screen name="Fruit Details" component={FruitDetails} options={{ cardStyleInterpolator: forFade }, ({ route }) => ({ title: route.params.name }) } />): null}
   {logged? (<Stack.Screen name="Detect" component={Detect} options={{title:'Detect'}} />): null}
   </Stack.Navigator>
  
