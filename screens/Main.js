@@ -12,6 +12,7 @@ import FruitDetails from '../screens/FruitDetails'
 import Dets from '../screens/Dets'
 import Landing from '../screens/Landing'
 import Detect from '../screens/Detect'
+import Plans from '../screens/Plans'
 import {UserContext} from '../context'
 
 import { createStackNavigator } from '@react-navigation/stack';
@@ -35,6 +36,7 @@ export default function Main() {
   {logged? (<Stack.Screen name="Details" component={Details} />): null}
   {logged? (<Stack.Screen name="Fruit Details" component={FruitDetails} options={{ cardStyleInterpolator: forFade }, ({ route }) => ({ title: route.params.name }) } />): null}
   {logged? (<Stack.Screen name="Detect" component={Detect} options={{title:'Detect'}} />): null}
+  {logged? (<Stack.Screen name="Plans" component={Plans} options={{headerShown: false}} />): null}
   </Stack.Navigator>
  
 </NavigationContainer>

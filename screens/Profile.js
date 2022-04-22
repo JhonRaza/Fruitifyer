@@ -63,7 +63,7 @@ export default function Profile(props) {
                         height: 90, width: 90, alignItems: 'center', justifyContent: 'center', alignSelf: 'flex-end',
                         position: 'absolute',
                     }} onPress={() => { props.navigation.goBack() }}>
-                        <Image source={require('../Fruitifyer-removebg-preview.png')} style={{
+                        <Image source={require('../assets/Fruitifyer-black.png')} style={{
 
                             right: -30,
                             height: 90,
