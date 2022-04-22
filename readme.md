@@ -11,4 +11,4 @@ $ git clone https://github.com/JhonRaza/Fruitifyer.git
 ```
 
 ## User-Interface and design
-![plot](https://github.com/JhonRaza/Fruitifyer/blob/main/assets/splash.jpg)
+![plot](https://github.com/JhonRaza/Fruitifyer/blob/main/assets/splash.jpeg)
