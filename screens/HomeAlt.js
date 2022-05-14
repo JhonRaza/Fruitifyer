@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, Button, TouchableNativeFeedback, ScrollView, Dimensions, Image, ImageBackground, Pressable, Modal } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import LinearGradient from 'react-native-linear-gradient';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { CardList } from 'react-native-card-list';
@@ -9,30 +9,87 @@ import { useNavigation } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 // import { shadow } from 'react-native-paper';
 import DropShadow from "react-native-drop-shadow";
-import Animated from 'react-native-reanimated';
 // import Modal from "react-native-modal";
+import firebase from '../database/firebase';
+import { UserContext } from '../context'
+import SlidableDrawer from 'react-native-slidable-drawer-panel';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 // import { Icon, Slider } from 'react-native-elements'
 
-export default Home = () => {
+export default Home = (props) => {
+    const { Name, Email, Password, DOB, Mass, Logged } = React.useContext(UserContext);
+    const [dispName, setDisp] = React.useState('')
+    const [name, setName] = Name
     const refRBSheet = React.useRef();
+    const [logged, setLogged] = Logged
     const [rippleColor, setRippleColor] = React.useState('grey');
     const navigator = useNavigation()
     const [rippleOverflow, setRippleOverflow] = React.useState(false);
     const [modalVisible, setModalVisible] = React.useState(false)
+    const [pic, setPic] = React.useState()
+    const [email, setEmail] = Email
+    useEffect(() => {
+        //import everything from firebase for current user
+        const name = auth().currentUser.displayName
+        setDisp(auth().currentUser.displayName)
+        console.log(name)
+        const usersRef = firestore().collection('users')
+        const query = usersRef.where('email', "==", auth().currentUser.email)
+        query.onSnapshot((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                // console.log()
+                if (!doc.data().picture) {
+                    setPic(false)
+                    console.log(pic)
+                }
+                else {
+                    setPic(true)
+                    console.log(pic)
+                }
+                // console.log('type ' + typeof (dets))
+                // console.l
+            })
+            // navigation.navigate('Profile')
+        })
+
+
+    }, [])
+    
+    const logOut = () => {
+        auth().signOut().then(() => {
+            setLogged(false)
+
+            navigator.navigate('Log In')
+            console.log(auth().currentUser)
+            setName('')
+            setEmail('')
+            // navigator.navigate()
+        })
+            .catch(error => console.log(error))
+    }
     return (
 
         <View style={styles.bigCard}>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 30, paddingLeft: 40 }}>
-                <View>
-                    <Text style={{ fontFamily: 'Poppins-SemiBold', fontSize: 35, color: 'black', top: 25 }}>Hello, Jhon!</Text>
-                    <Text style={{ textAlign: 'center', fontSize: 15, fontFamily: 'Poppins-ExtraLight', color: 'black', marginTop: 15, marginLeft: -12 }}>What are you upto today?</Text>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 20, paddingLeft: 0 }}>
+
+                <View style={{ width: 90, paddingLeft: 5 }}>
+                    <TouchableOpacity onPress={logOut} style={{ width: 90 }}>
+                        <Text style={{ textAlign: 'center', fontSize: 10, fontFamily: 'Poppins-ExtraLight', color: 'red', marginTop: 15 }}>Log Out</Text>
+                    </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={{ borderRadius: 100, borderColor: '#000000', borderWidth: 0.5, padding: 2, alignSelf: 'flex-end', top: 0, right: 20, height: 37, width: 37, alignItems: 'center', justifyContent: 'center' }}
+                <TouchableOpacity style={{ borderRadius: 100, borderColor: '#000000', borderWidth: 0.5, padding: 2, alignSelf: 'flex-end', top: 0, right: 20, height: 33, width: 33, alignItems: 'center', justifyContent: 'center' }}
                     onPress={() => { navigator.navigate('Profile') }}>
-                    <Image source={require('../me.jpeg')} style={{ borderRadius: 100, height: 33, width: 33 }} />
+                    {!pic ? (<Image source={require('../assets/me.png')} style={{ borderRadius: 100, height: 28, width: 28 }} />):(<Image source={require('../me.jpeg')} style={{ borderRadius: 100, height: 28, width: 28 }} />)} 
                 </TouchableOpacity>
             </View>
+
+            <View style={{ flexDirection: 'column', justifyContent: 'space-between', paddingLeft: 30 }}>
+                <Text style={{ fontFamily: 'Poppins-SemiBold', fontSize: 30, color: 'black', top: 25 }}>Hello, {name}!</Text>
+                <Text style={{ fontSize: 15, fontFamily: 'Poppins-ExtraLight', color: 'black', marginTop: 15 }}>What are you upto today?</Text>
+            </View>
+
             <View style={styles.innerCard}>
 
                 {/* <View style={styles.imageWrapper}>
@@ -65,7 +122,6 @@ export default Home = () => {
                             </LinearGradient>
                         </TouchableOpacity>
                     </DropShadow>
-
                 </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 40 }}>
                     <DropShadow style={{
@@ -81,9 +137,9 @@ export default Home = () => {
                             </LinearGradient>
                         </TouchableOpacity>
                     </DropShadow>
-                    
+
                 </View>
-                
+
                 <RBSheet
                     ref={refRBSheet}
                     closeOnDragDown={false}
@@ -108,33 +164,16 @@ export default Home = () => {
                         }
                     }}
                 >
-                    {/* <View style={styles.bottomSheetHeader}>
-          <Text style={{fontWeight: 'bold'}}>Deliver to</Text>
-          {/* <Icon name='x-circle'  type='feather' size={17}/> */}
-                    {/* </View> */}
 
                     <View style={styles.savedLocation}>
                         <Pressable onPress={() => refRBSheet.current.close()}>
                             <Text style={{ fontFamily: 'Poppins-Regular', marginTop: 10, color: 'red' }}>Close</Text>
-                            {/* <Icon name='checkmark-circle-outline' type='ionicon' color='#1c96c5' size={30} /> */}
-                            {/* <MaterialCommunityIcons name="mdiCloseCircle" color={'red'} size={26}/> */}
                         </Pressable>
                         <View style={{ paddingLeft: 10 }}>
-                            {/* <Text style={{fontWeight: 'bold'}}>Unsaved Location</Text>
-            <Text>B12, Row C,Gulshan e Iqbal, Block 5...</Text> */}
                         </View>
 
                     </View>
-                    {/* <View style={styles.locationDiv}>
-            <View style={styles.locationButton}>
-              {/* <Icon name='arrow-top-right' type='material-community' color='green'/> */}
-                    {/* <Text style={{paddingLeft: 10, color: 'green', fontWeight: '800'}}>Use my current location</Text>
-            </View>
-            <View style={styles.locationButton}>
-              {/* <Icon name='location' type='evilicon' color="green"/> */}
-                    {/* <Text  style={{paddingLeft: 10, color: 'green', fontWeight: '800'}} >Select new location</Text>
-            </View>
-          </View> */}
+
                     <ScrollView showsVerticalScrollIndicator={true}>
                         <TouchableOpacity activeOpacity={3}>
                             <View
@@ -156,10 +195,10 @@ How and when we eat can also make a difference, as the body uses energy differen
                     </ScrollView>
 
                 </RBSheet>
-                
+
             </View>
         </View>
-        
+
     )
 }
 

@@ -6,8 +6,8 @@
  * @flow strict-local
  */
 
-import React, {useState, useEffect, useContext} from 'react';
-import type {Node} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import type { Node } from 'react';
 // import 'react-native-gesture-handler';
 import {
   SafeAreaView,
@@ -22,17 +22,17 @@ import {
 } from 'react-native';
 import Base from './screens/Base'
 import LinearGradient from 'react-native-linear-gradient';
-import Home from './screens/Home'
-import Camera from './screens/Camera'
+// import {Camera1} from './screens/Camera'
 import { NavigationContainer } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Details from './screens/Details'
 import FruitDetails from './screens/FruitDetails'
 import Dets from './screens/Dets'
 import Landing from './screens/Landing'
-import {UserDetails} from './context'
+import { UserDetails } from './context'
 import Main from './screens/Main'
-// import {UserContext} from './context'
+// import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 import {
   Colors,
@@ -48,6 +48,7 @@ import {
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
+import auth from '@react-native-firebase/auth';
 
 
 const Tab = createMaterialBottomTabNavigator();
@@ -60,6 +61,36 @@ const App: () => Node = () => {
   //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   // };
   const [loaded, setLoaded] = useState(false) //make a native splash screen later
+  const [logged, setLogged] = useState(false) //make a native splash screen later
+
+  // const auth = getAuth();
+  function onAuthStateChanged(user) {
+    
+    if (user != null){
+    setLogged(true)
+    }
+    else{
+      setLogged(false)
+    }
+
+    console.log(logged)
+    if (!loaded) setLoaded(true);
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+        if (auth().currentUser){
+          setLogged(true)
+          console.log(auth().currentUser.email)
+          
+        } 
+        else{
+          setLogged(false)
+        }     
+        setLoaded(true)
+    }, 2000);
+    
+  }, []);
   // const [logged, setLogged] = useState(false)
   // const {Logged} = useContext(UserContext);
   // const [name, setName] = Name;
@@ -67,37 +98,56 @@ const App: () => Node = () => {
   //   const [password, setPassword] = Password;
   //   const [dob, setDOB] = DOB;
   //   const [mass, setMass] = Mass;
-    // const [logged, setLogged] = Logged
-  useEffect(() => {
-      setTimeout(() => {
-        setLoaded(true);
-      }, 3000);
-    }, [])
-  if (!loaded) {
-  return (
-    // <SafeAreaView style={styles.container}>
-    //   <ScrollView style={styles.scrollView}>
-    <LinearGradient colors={['rgba(118, 52, 170, 1)', 'rgba(18, 39, 151, 0.7256)']} start = {{x: 0, y: 1}} end = {{x: 1, y: 0}}
-          style={styles.linearGradient}
-        >
-        <Image source={require('./Fruitifyer-logo.png')} style={{position: 'absolute', height: 300, width: 300, top: Dimensions.get('window').height/4.5, alignSelf: 'center'}}/>
-        <Text style={{position: 'absolute', fontSize: 40, paddingTop: 130, alignSelf: 'center', color: '#FFFFFF', fontFamily: 'Poppins-Regular'}}>Fruitifyer</Text>
-        </LinearGradient>
+  // const [logged, setLogged] = Logged
+  // useEffect(() => {
+  //   function checkAuth(){
+  //   onAuthStateChanged(auth, (user) => {
+  //     if (user) {
+  //       // User is signed in, see docs for a list of available properties
+  //       // https://firebase.google.com/docs/reference/js/firebase.User
+  //       const uid = user.uid;
+  //       setLogged(true)
+  //       // ...
+  //     } else {
+  //       // User is signed out
+  //       // ...
+  //     }
+  //   })};
+  //   const users =  firestore().collection('guides').then(docSnapshot => {
+  //     if (docSnapshot.exists) {
+  //         const userData = docSnapshot.data()
+  //         console.log(userData)
+  //     }
+  // });
 
-    //   </ScrollView>
-    // </SafeAreaView>
-  );
+  //   console.log(db)
+    
+  // }, [])
+  if (!loaded) {
+    return (
+      // <SafeAreaView style={styles.container}>
+      //   <ScrollView style={styles.scrollView}>
+      <LinearGradient colors={['rgba(118, 52, 170, 1)', 'rgba(18, 39, 151, 0.7256)']} start={{ x: 0, y: 1 }} end={{ x: 1, y: 0 }}
+        style={styles.linearGradient}
+      >
+        <Image source={require('./Fruitifyer-logo.png')} style={{ position: 'absolute', height: 300, width: 300, top: Dimensions.get('window').height / 4.5, alignSelf: 'center' }} />
+        <Text style={{ position: 'absolute', fontSize: 40, paddingTop: 130, alignSelf: 'center', color: '#FFFFFF', fontFamily: 'Poppins-Regular' }}>Fruitifyer</Text>
+      </LinearGradient>
+
+      //   </ScrollView>
+      // </SafeAreaView>
+    );
   }
-  else{
+  else {
     // if (logged){
     return (
       <UserDetails>
-      <Main />
-    </UserDetails>
+        <Main log={logged} />
+      </UserDetails>
     )
-  // }
-  
-}
+    // }
+
+  }
 
 }
 
@@ -107,7 +157,7 @@ const styles = StyleSheet.create({
   //   paddingTop: StatusBar.currentHeight,
   // },
 
-  
+
   scrollView: {
     backgroundColor: 'pink',
     // marginHorizontal: 20,

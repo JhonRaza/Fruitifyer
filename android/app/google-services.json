@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "715440869732",
+    "firebase_url": "https://fruitifyer-ca6fa-default-rtdb.firebaseio.com",
+    "project_id": "fruitifyer-ca6fa",
+    "storage_bucket": "fruitifyer-ca6fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715440869732:android:53e9758a4a37a831572a71",
+        "android_client_info": {
+          "package_name": "com.fruitifyer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "715440869732-497414q22rq6659id6349fb2psi1pklp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx09FvDbJTxk2gnBHzBSQa7vneHgR7m3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "715440869732-497414q22rq6659id6349fb2psi1pklp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

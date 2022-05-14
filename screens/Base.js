@@ -1,15 +1,23 @@
-import { View, Text } from 'react-native'
+import { View, Text, ActivityIndicator, StyleSheet } from 'react-native'
 import React from 'react'
-import Home from './Home'
 import Profile from './Profile'
 import HomeAlt from './HomeAlt'
-import Camera from './Camera'
+import Camera1 from './Camera'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {UserContext} from '../context'
+import auth from '@react-native-firebase/auth';
 
 const Tab = createMaterialBottomTabNavigator();
 
 export default function Base({navigation}) {
+  const {Name,Email,Password,DOB, Mass, Logged, Loaded} = React.useContext(UserContext);
+
+  const[logged, setLogged] = Logged
+  const[loaded, setLoaded] = Loaded
+  const[name, setName] = Name
+  
+if (loaded){
   return (
       <Tab.Navigator initialRouteName='Home' activeColor="#1DAEFF"  barStyle={{ backgroundColor: '#0D0B26',
             // padding: 30,
@@ -54,3 +62,23 @@ export default function Base({navigation}) {
 
   )
 }
+else{
+  return (
+    <View style={styles.preloader}>
+      <ActivityIndicator size="large" color="#9E9E9E" />
+    </View>
+  )
+}
+}
+const styles = StyleSheet.create({
+  preloader: {
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#fff'
+  }
+})

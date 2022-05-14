@@ -8,7 +8,6 @@ import { useNavigation } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 // import { shadow } from 'react-native-paper';
 // import DropShadow from "react-native-drop-shadow";
-import Animated from 'react-native-reanimated';
 // import Modal from "react-native-modal";
 // import {data} from '../assets/plans'
 import Carousel, { Pagination } from 'react-native-snap-carousel';
@@ -120,13 +119,16 @@ function Plans() {
                             borderTopWidth: 0.07,
                             alignSelf: 'center'
                         }}>
-                            <View style={{flex: 0.125}}>
+                            <View style={{ flex: 0.125 }}>
 
                             </View>
-                            <View style={{ flex: 4}}>
-                                <Text style={{ fontSize: 28, fontFamily: 'Poppins-Medium', alignSelf: 'center', paddingBottom: 5 }}>Free</Text>
-                                <Text style={{fontSize: 35, fontFamily: 'Poppins-Bold', alignSelf: 'center' , marginBottom: 5}}>$0/mo</Text>
-                                <Text style={{ paddingBottom: 23, fontFamily: 'Poppins-Regular', alignSelf: 'center' }}>The basic package.</Text>
+                            <View style={{ flex: 4 }}>
+                                <Text style={{ fontSize: 20, fontFamily: 'Poppins-Medium' }}>Free</Text>
+                                <View style={{flexDirection: 'row'}}>
+                                <Text style={{fontSize: 30, fontFamily: 'Poppins-Bold', alignSelf: 'center' , marginBottom: 5}}>$0 </Text>
+                                <Text style={{fontSize: 13,paddingBottom: 15,  fontFamily: 'Poppins-Light', alignSelf: 'center' , marginBottom: 5}}>/ month</Text>
+                                </View>
+                                <Text style={{ paddingBottom: 23, fontFamily: 'Poppins-Regular' }}>The basic package.</Text>
                                 <View style={{ flexDirection: 'row', paddingBottom: 3 }}>
                                     <Image source={require('../assets/check.png')} style={{ height: 13, width: 13, marginRight: 12, top: 2 }} />
                                     <Text style={{ fontFamily: 'Poppins-Regular', fontSize: 12 }}>Basic information on caloric intake</Text>
@@ -168,13 +170,16 @@ function Plans() {
                             borderTopWidth: 0.07,
                             alignSelf: 'center'
                         }}>
-                            <View style={{flex: 0.125}}>
+                            <View style={{ flex: 0.125 }}>
 
-</View>
+                            </View>
                             <View style={{ flex: 4 }}>
-                            <Text style={{ fontSize: 24, fontFamily: 'Poppins-Medium', alignSelf: 'center', paddingBottom: 5 }}>Healthier</Text>
-                                <Text style={{fontSize: 30, fontFamily: 'Poppins-Bold', alignSelf: 'center' , marginBottom: 5}}>$8.99/mo</Text>
-                                <Text style={{ paddingBottom: 23, fontFamily: 'Poppins-Regular', alignSelf: 'center' }}>More features!</Text>
+                                <Text style={{ fontSize: 20, fontFamily: 'Poppins-Medium' }}>Healthier</Text>
+                                <View style={{ flexDirection: 'row' }}>
+                                    <Text style={{ fontSize: 30, fontFamily: 'Poppins-Bold', alignSelf: 'center', marginBottom: 5 }}>$8.99 </Text>
+                                    <Text style={{ fontSize: 13, paddingBottom: 15, fontFamily: 'Poppins-Light', alignSelf: 'center', marginBottom: 5 }}>/ month</Text>
+                                </View>
+                                <Text style={{ paddingBottom: 23, fontFamily: 'Poppins-Regular' }}>More features!</Text>
                                 <View style={{ flexDirection: 'row', paddingBottom: 3 }}>
                                     <Image source={require('../assets/check.png')} style={{ height: 13, width: 13, marginRight: 12, top: 2 }} />
                                     <Text style={{ fontFamily: 'Poppins-Regular', fontSize: 12 }}>Basic information on caloric intake</Text>
@@ -195,15 +200,15 @@ function Plans() {
                                     <Image source={require('../assets/notCheck.png')} style={{ height: 13, width: 13, marginRight: 12, top: 2 }} />
                                     <Text style={{ fontFamily: 'Poppins-Regular', color: '#d1d1d1', fontSize: 12 }}>Personalized nutritional guidance from experts</Text>
                                 </View>
-                                <View style={{marginTop: 30}}>
-                                    <TouchableOpacity style={{backgroundColor: '#7634AA', borderRadius: 20, height: 30, flexDirection: 'row'}}>
-                                        <View style={{flex: 1}}></View>
-                                        <View style={{alignItems: 'center', justifyContent: 'center', paddingTop: 4}}>
-                                        <Text style={{flex: 4, color: 'white', fontFamily: 'Poppins-Regular'}}>
-                                            Buy now
-                                        </Text></View>
-                                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: -2}}>
-                                        <Image source={require('../assets/forward.png')} style={{height: 15, width: 15}} /></View>
+                                <View style={{ marginTop: 30 }}>
+                                    <TouchableOpacity style={{ backgroundColor: '#7634AA', borderRadius: 20, height: 30, flexDirection: 'row' }}>
+                                        <View style={{ flex: 1 }}></View>
+                                        <View style={{ alignItems: 'center', justifyContent: 'center', paddingTop: 4 }}>
+                                            <Text style={{ flex: 4, color: 'white', fontFamily: 'Poppins-Regular' }}>
+                                                Buy now
+                                            </Text></View>
+                                        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: -2 }}>
+                                            <Image source={require('../assets/forward.png')} style={{ height: 15, width: 15 }} /></View>
                                     </TouchableOpacity>
                                 </View>
                             </View>
@@ -227,14 +232,14 @@ function Plans() {
                             borderTopWidth: 0.07,
                             alignSelf: 'center'
                         }}>
-                            <View style={{flex: 0.125}}>
+                            <View style={{ flex: 0.125 }}>
 
-</View>
+                            </View>
                             <View style={{ flex: 4 }}>
                                 <Text style={{ fontSize: 20, fontFamily: 'Poppins-Medium' }}>Premium</Text>
-                                <View style={{flexDirection: 'row'}}>
-                                <Text style={{fontSize: 30, fontFamily: 'Poppins-Bold', alignSelf: 'center' , marginBottom: 5}}>$18.99 </Text>
-                                <Text style={{fontSize: 13,paddingBottom: 15,  fontFamily: 'Poppins-Light', alignSelf: 'center' , marginBottom: 5}}>/ month</Text>
+                                <View style={{ flexDirection: 'row' }}>
+                                    <Text style={{ fontSize: 30, fontFamily: 'Poppins-Bold', alignSelf: 'center', marginBottom: 5 }}>$18.99 </Text>
+                                    <Text style={{ fontSize: 13, paddingBottom: 15, fontFamily: 'Poppins-Light', alignSelf: 'center', marginBottom: 5 }}>/ month</Text>
                                 </View>
                                 <Text style={{ paddingBottom: 23, fontFamily: 'Poppins-Regular' }}>Best of the lot!</Text>
                                 <View style={{ flexDirection: 'row', paddingBottom: 3 }}>
@@ -257,15 +262,15 @@ function Plans() {
                                     <Image source={require('../assets/check.png')} style={{ height: 13, width: 13, marginRight: 12, top: 2 }} />
                                     <Text style={{ fontFamily: 'Poppins-Regular', fontSize: 12 }}>Personalized nutritional guidance from experts</Text>
                                 </View>
-                                <View style={{marginTop: 30}}>
-                                    <TouchableOpacity style={{backgroundColor: '#7634AA', borderRadius: 20, height: 30, flexDirection: 'row'}}>
-                                        <View style={{flex: 1}}></View>
-                                        <View style={{alignItems: 'center', justifyContent: 'center', paddingTop: 4}}>
-                                        <Text style={{flex: 4, color: 'white', fontFamily: 'Poppins-Regular'}}>
-                                            Buy now
-                                        </Text></View>
-                                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: -2}}>
-                                        <Image source={require('../assets/forward.png')} style={{height: 15, width: 15}} /></View>
+                                <View style={{ marginTop: 30 }}>
+                                    <TouchableOpacity style={{ backgroundColor: '#7634AA', borderRadius: 20, height: 30, flexDirection: 'row' }}>
+                                        <View style={{ flex: 1 }}></View>
+                                        <View style={{ alignItems: 'center', justifyContent: 'center', paddingTop: 4 }}>
+                                            <Text style={{ flex: 4, color: 'white', fontFamily: 'Poppins-Regular' }}>
+                                                Buy now
+                                            </Text></View>
+                                        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: -2 }}>
+                                            <Image source={require('../assets/forward.png')} style={{ height: 15, width: 15 }} /></View>
                                     </TouchableOpacity>
                                 </View>
                             </View>
